@@ -11,12 +11,16 @@ import java.util.stream.Stream;
 /**
  * Created by ruhul on 5/24/17.
  */
+
+//http://algs4.cs.princeton.edu/code/
+
+
 public class InputHandler {
 
     public InputHandler() {
     }
 
-    //takes input from file located at "dataSet" directory
+    //takes input from file located at "dataSet" directory  and returns data as string array
     public static String[] scanStringData(String fileName){
         List<String> list = new ArrayList<>();
 
@@ -35,6 +39,7 @@ public class InputHandler {
         return whiteList;
     }
 
+    //takes input from file located at "/dataSet" directory  and returns data as integer array
     public static int[] scanIntData(String fileName){
         List<String> list = new ArrayList<>();
 

@@ -41,64 +41,10 @@ public class Insertion {
         assert isSorted(a);
     }
 
-    //Rearranges the subarray a[lo..hi) in ascending order, using the natural order.
-    public static void sort(Comparable[] a, int lo, int hi) {
-        for (int i = lo; i < hi; i++) {
-            for (int j = i; j > lo && less(a[j], a[j - 1]); j--) {
-                exchange(a, j, j - 1);
-            }
-        }
-        assert isSorted(a, lo, hi);
-    }
-
-
-    // Rearranges the array in ascending order, using a comparator.
-    public static void sort(Object[] a, Comparator comparator) {
-        int n = a.length;
-        for (int i = 0; i < n; i++) {
-            for (int j = i; j > 0 && less(a[j], a[j - 1], comparator); j--) {
-                exchange(a, j, j - 1);
-            }
-            assert isSorted(a, 0, i, comparator);
-        }
-        assert isSorted(a, comparator);
-    }
-
-    /**
-     * Rearranges the subarray a[lo..hi) in ascending order, using a comparator.
-     *
-     * @param a          the array
-     * @param lo         left endpoint (inclusive)
-     * @param hi         right endpoint (exclusive)
-     * @param comparator the comparator specifying the order
-     */
-    public static void sort(Object[] a, int lo, int hi, Comparator comparator) {
-        for (int i = lo; i < hi; i++) {
-            for (int j = i; j > lo && less(a[j], a[j - 1], comparator); j--) {
-                exchange(a, j, j - 1);
-            }
-        }
-        assert isSorted(a, lo, hi, comparator);
-    }
-
-    // return a permutation that gives the elements in a[] in ascending order
-    // do not change the original array a[]
-    public static int[] indexSort(Comparable[] a) {
-        int n = a.length;
-        int[] index = new int[n];
-        for (int i = 0; i < n; i++)
-            index[i] = i;
-
-        for (int i = 0; i < n; i++)
-            for (int j = i; j > 0 && less(a[index[j]], a[index[j - 1]]); j--)
-                exchange(index, j, j - 1);
-
-        return index;
-    }
-
     /*
-    * helper sorting functions
+    * helper methods of sorting functions
     * */
+
     // is v < w ?
     private static boolean less(Comparable v, Comparable w) {
         return v.compareTo(w) < 0;
@@ -155,5 +101,55 @@ public class Insertion {
         for (int i = 0; i < a.length; i++) {
             StdOut.println(a[i]);
         }
+    }
+
+
+    //Rearranges the subarray a[lo..hi) in ascending order, using the natural order.
+    public static void sort(Comparable[] a, int lo, int hi) {
+        for (int i = lo; i < hi; i++) {
+            for (int j = i; j > lo && less(a[j], a[j - 1]); j--) {
+                exchange(a, j, j - 1);
+            }
+        }
+        assert isSorted(a, lo, hi);
+    }
+
+
+    // Rearranges the array in ascending order, using a comparator.
+    public static void sort(Object[] a, Comparator comparator) {
+        int n = a.length;
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j > 0 && less(a[j], a[j - 1], comparator); j--) {
+                exchange(a, j, j - 1);
+            }
+            assert isSorted(a, 0, i, comparator);
+        }
+        assert isSorted(a, comparator);
+    }
+
+    // Rearranges the subarray a[lo..hi) in ascending order, using a comparator.
+
+    public static void sort(Object[] a, int lo, int hi, Comparator comparator) {
+        for (int i = lo; i < hi; i++) {
+            for (int j = i; j > lo && less(a[j], a[j - 1], comparator); j--) {
+                exchange(a, j, j - 1);
+            }
+        }
+        assert isSorted(a, lo, hi, comparator);
+    }
+
+    // return a permutation that gives the elements in a[] in ascending order
+    // do not change the original array a[]
+    public static int[] indexSort(Comparable[] a) {
+        int n = a.length;
+        int[] index = new int[n];
+        for (int i = 0; i < n; i++)
+            index[i] = i;
+
+        for (int i = 0; i < n; i++)
+            for (int j = i; j > 0 && less(a[index[j]], a[index[j - 1]]); j--)
+                exchange(index, j, j - 1);
+
+        return index;
     }
 }
