@@ -1,4 +1,4 @@
-package GeneticAlgorithm;
+package GeneticAlgorithm.fitness_finder;
 
 /**
  * Created by ruhul on 7/10/17.

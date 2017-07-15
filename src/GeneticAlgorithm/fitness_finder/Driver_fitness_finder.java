@@ -1,11 +1,11 @@
-package GeneticAlgorithm;
+package GeneticAlgorithm.fitness_finder;
 
 import java.util.Arrays;
 
 /**
  * Created by ruhul on 7/10/17.
  */
-public class Driver {
+public class Driver_fitness_finder {
 
     public static void main(String[] args){
         Population population = new Population(GeneticAlgo.POPULATION_SIZE).initializePopulation();

@@ -1,4 +1,4 @@
-package GeneticAlgorithm;
+package GeneticAlgorithm.fitness_finder;
 
 import java.util.Arrays;
 
