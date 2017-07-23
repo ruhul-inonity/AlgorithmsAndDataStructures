@@ -2,7 +2,6 @@ package GeneticAlgorithm.university_class_scheduling;
 
 import GeneticAlgorithm.university_class_scheduling.domain.*;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -12,12 +11,12 @@ import java.util.Arrays;
 public class Data {
     private ArrayList<Room> rooms;
     private ArrayList<Instructor> instructors;
-    private ArrayList<Course> cources;
+    private ArrayList<Course> courses;
     private ArrayList<Department> depts;
     private ArrayList<MeetingTime> meetingTimes;
     private int numberOfClasses = 0;
 
-    private Data () {initialize();}
+    public Data () {initialize();}
 
     private Data initialize(){
         Room room1 = new Room("R1",25);
@@ -37,19 +36,20 @@ public class Data {
         Instructor instructor4 = new Instructor("I4", "Dr John Doe ");
         instructors = new ArrayList<>(Arrays.asList(instructor1,instructor2,instructor3,instructor4));
 
-        Course course1 = new Course("C1","325K", new ArrayList<Instructor>(Arrays.asList(instructor1,instructor2)), 25);
-        Course course2 = new Course("C2","319K", new ArrayList<Instructor>(Arrays.asList(instructor1,instructor2,instructor3)), 35);
-        Course course3 = new Course("C3","462K", new ArrayList<Instructor>(Arrays.asList(instructor1,instructor2)), 25);
-        Course course4 = new Course("C4","464K", new ArrayList<Instructor>(Arrays.asList(instructor3,instructor4)), 30);
-        Course course5 = new Course("C5","360C", new ArrayList<Instructor>(Arrays.asList(instructor4)), 35);
-        Course course6 = new Course("C6","303K", new ArrayList<Instructor>(Arrays.asList(instructor1,instructor3)), 45);
-        Course course7 = new Course("C7","303L", new ArrayList<Instructor>(Arrays.asList(instructor2,instructor4)), 45);
-        cources = new ArrayList<Course>(Arrays.asList(course1,course2,course3,course4,course5,course6,course7));
+        Course course1 = new Course("C1","325K", new ArrayList<>(Arrays.asList(instructor1, instructor2)), 25);
+        Course course2 = new Course("C2","319K", new ArrayList<>(Arrays.asList(instructor1, instructor2, instructor3)), 35);
+        Course course3 = new Course("C3","462K", new ArrayList<>(Arrays.asList(instructor1, instructor2)), 25);
+        Course course4 = new Course("C4","464K", new ArrayList<>(Arrays.asList(instructor3, instructor4)), 30);
+        Course course5 = new Course("C5","360C", new ArrayList<>(Arrays.asList(instructor4)), 35);
+        Course course6 = new Course("C6","303K", new ArrayList<>(Arrays.asList(instructor1, instructor3)), 45);
+        Course course7 = new Course("C7","303L", new ArrayList<>(Arrays.asList(instructor2, instructor4)), 45);
+        courses = new ArrayList<>(Arrays.asList(course1, course2, course3, course4, course5, course6, course7));
 
-        Department dept1 = new Department("MATH", new ArrayList<Course>(Arrays.asList(course1,course2)));
-        Department dept2 = new Department("EE", new ArrayList<Course>(Arrays.asList(course2,course4,course5)));
-        Department dept3 = new Department("PHY", new ArrayList<Course>(Arrays.asList(course6,course7)));
-        depts = new ArrayList<Department>(Arrays.asList(dept1, dept2, dept3));
+        Department dept1 = new Department("MATH", new ArrayList<>(Arrays.asList(course1, course2)));
+        Department dept2 = new Department("EE", new ArrayList<>(Arrays.asList(course2, course4, course5)));
+        Department dept3 = new Department("PHY", new ArrayList<>(Arrays.asList(course6, course7)));
+        depts = new ArrayList<>(Arrays.asList(dept1, dept2, dept3));
+
         depts.forEach(x -> numberOfClasses += x.getCourses().size());
 
         return this;
@@ -64,8 +64,8 @@ public class Data {
         return instructors;
     }
 
-    public ArrayList<Course> getCources() {
-        return cources;
+    public ArrayList<Course> getCourses() {
+        return courses;
     }
 
     public ArrayList<Department> getDepts() {

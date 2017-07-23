@@ -5,18 +5,18 @@ package GeneticAlgorithm.university_class_scheduling.domain;
  */
 public class MeetingTime {
     private String id;
-    private String name;
+    private String time;
 
-    public MeetingTime(String id, String name) {
+    public MeetingTime(String id, String time) {
         this.id = id;
-        this.name = name;
+        this.time = time;
     }
 
     public String getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getTime() {
+        return time;
     }
 }

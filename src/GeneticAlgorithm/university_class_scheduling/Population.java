@@ -1,7 +1,32 @@
 package GeneticAlgorithm.university_class_scheduling;
 
+import java.util.ArrayList;
+import java.util.stream.IntStream;
+
 /**
  * Created by ruhul on 7/13/17.
  */
 public class Population {
+
+    private ArrayList<Schedule> schedules;
+
+    public Population(int size, Data data) {
+        schedules = new ArrayList<>(size);
+        IntStream.range(0, size).forEach(x -> schedules.add(new Schedule(data).initialize()));
+    }
+
+    public ArrayList<Schedule> getSchedules() {
+        return schedules;
+    }
+
+    //sorts schedules by fitness
+    public Population shortByFitness(){
+        schedules.sort((schedule1, schedule2) -> {
+          int returnValue = 0;
+            if (schedule1.getFitness() > schedule2.getFitness()) returnValue = -1;
+            else if (schedule1.getFitness() < schedule2.getFitness()) returnValue = 1;
+            return returnValue;
+        });
+        return this;
+    }
 }

@@ -49,6 +49,18 @@ public class Class {
         return meetingTime;
     }
 
+    public void setInstructor(Instructor instructor) {
+        this.instructor = instructor;
+    }
+
+    public void setMeetingTime(MeetingTime meetingTime) {
+        this.meetingTime = meetingTime;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
     public Room getRoom() {
         return room;
     }
