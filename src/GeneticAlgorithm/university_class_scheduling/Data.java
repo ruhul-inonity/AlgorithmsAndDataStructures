@@ -22,13 +22,13 @@ public class Data {
         Room room1 = new Room("R1",25);
         Room room2 = new Room("R3",45);
         Room room3 = new Room("R3",35);
-        rooms = new ArrayList<Room>(Arrays.asList(room1, room2, room3));
+        rooms = new ArrayList<>(Arrays.asList(room1, room2, room3));
 
         MeetingTime meetingTime1 = new MeetingTime("MT1", "MWF 09:00 - 10:00");
         MeetingTime meetingTime2 = new MeetingTime("MT2", "MWF 10:00 - 11:00");
         MeetingTime meetingTime3 = new MeetingTime("MT3", "TTH 09:00 - 10:30");
         MeetingTime meetingTime4 = new MeetingTime("MT4", "TTH 10:30 - 12:00");
-        meetingTimes = new ArrayList<MeetingTime>(Arrays.asList(meetingTime1, meetingTime2, meetingTime3, meetingTime4));
+        meetingTimes = new ArrayList<>(Arrays.asList(meetingTime1, meetingTime2, meetingTime3, meetingTime4));
 
         Instructor instructor1 = new Instructor("I1", "Dr James Web ");
         Instructor instructor2 = new Instructor("I2", "Dr Mike Brown ");

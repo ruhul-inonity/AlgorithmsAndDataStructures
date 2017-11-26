@@ -33,9 +33,9 @@ public class BinarySearch_V1 {
         List<String> list = new ArrayList<>();
 
         int[] whiteList = InputHandler.scanIntData("dataSet/largeW.txt");
-        for (int i = 0; i < list.size(); i++) {
+      /*  for (int i = 0; i < list.size(); i++) {
             whiteList[i] = Integer.parseInt(list.get(i));
-        }
+        }*/
 
         // sort the array
         Arrays.sort(whiteList);
